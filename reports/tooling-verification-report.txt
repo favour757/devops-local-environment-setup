@@ -1,0 +1,42 @@
+================================================================================
+DEVOPS ENGINEER LOCAL ENVIRONMENT VERIFICATION REPORT
+Candidate: Favour (favourkose@gmail.com)
+Date: Fri Nov 13 14:35:23 UTC 2026
+================================================================================
+
+--- 1. SYSTEM & HOST ---
+Linux FAVOURKOSE 6.18.58.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Tue Oct 27 00:24:11 UTC 2026 x86_64 GNU/Linux
+               total        used        free      shared  buff/cache   available
+Mem:           7.5Gi       1.2Gi       314Mi        13Mi       6.1Gi       6.2Gi
+Swap:          2.0Gi       544Ki       2.0Gi
+
+--- 2. VERSION CONTROL & EDITOR ---
+git version 2.53.0
+user.name=Favour
+user.email=favourkose@gmail.com
+init.defaultbranch=main
+
+--- 3. CONTAINERIZATION ---
+Docker version 29.9.3, build 5457199
+Docker Compose version v5.7.1
+
+--- 4. KUBERNETES TOOLING ---
+  gitVersion: v1.37.2
+v1.39.0
+v3.22.1+gd6c1a0e
+
+--- 5. CLOUD CLIS & RUNTIMES ---
+aws-cli/2.40.2 Python/3.14.8 Linux/6.18.58.1-microsoft-standard-WSL2 exe/x86_64.ubuntu.26
+{
+  "azure-cli": "2.92.0",
+  "azure-cli-core": "2.92.0",
+  "azure-cli-telemetry": "1.1.0",
+  "extensions": {}
+node: v22.22.1
+npm: 9.2.0
+jq: jq-1.8.1
+
+--- 6. INFRASTRUCTURE AS CODE ---
+Terraform v1.17.2
+ansible [core 2.20.1]
+================================================================================

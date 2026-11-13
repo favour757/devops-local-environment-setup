@@ -1,0 +1,30 @@
+================================================================================
+LOCAL KUBERNETES CLUSTER PROOF OF OPERATION
+Candidate: Favour (favourkose@gmail.com)
+Date: Fri Nov 13 14:49:16 UTC 2026
+================================================================================
+
+--- MINIKUBE STATUS ---
+minikube
+type: Control Plane
+host: Running
+kubelet: Running
+apiserver: Running
+kubeconfig: Configured
+
+
+--- KUBERNETES NODES ---
+NAME       STATUS   ROLES           AGE   VERSION   INTERNAL-IP    EXTERNAL-IP   OS-IMAGE                         KERNEL-VERSION                              CONTAINER-RUNTIME
+minikube   Ready    control-plane   24m   v1.37.0   192.168.49.2   <none>        Debian GNU/Linux 12 (bookworm)   6.18.58.1-microsoft-standard-WSL2 (amd64)   containerd://2.3.4
+
+--- CORE SYSTEM PODS ---
+NAMESPACE     NAME                               READY   STATUS    RESTARTS   AGE
+kube-system   coredns-559f6c778d-bhg2j           1/1     Running   0          24m
+kube-system   etcd-minikube                      1/1     Running   0          24m
+kube-system   kindnet-crmf8                      1/1     Running   0          24m
+kube-system   kube-apiserver-minikube            1/1     Running   0          24m
+kube-system   kube-controller-manager-minikube   1/1     Running   0          24m
+kube-system   kube-proxy-6lbk9                   1/1     Running   0          24m
+kube-system   kube-scheduler-minikube            1/1     Running   0          24m
+kube-system   storage-provisioner                1/1     Running   0          24m
+================================================================================

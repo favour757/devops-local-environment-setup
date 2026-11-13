@@ -1,42 +1,114 @@
 ================================================================================
 DEVOPS ENGINEER LOCAL ENVIRONMENT VERIFICATION REPORT
 Candidate: Favour (favourkose@gmail.com)
-Date: Fri Nov 13 14:35:23 UTC 2026
+GitHub Account: favour757 (https://github.com/favour757)
+Platform: Ubuntu on Windows 11 (WSL2 - Kernel 6.18.58.1-microsoft-standard-WSL2)
+Execution Date: 2026-11-13
 ================================================================================
 
---- 1. SYSTEM & HOST ---
-Linux FAVOURKOSE 6.18.58.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Tue Oct 27 00:24:11 UTC 2026 x86_64 GNU/Linux
-               total        used        free      shared  buff/cache   available
-Mem:           7.5Gi       1.2Gi       314Mi        13Mi       6.1Gi       6.2Gi
-Swap:          2.0Gi       544Ki       2.0Gi
+[+] 1. SYSTEM & HOST ENVIRONMENT COMPLIANCE
+--------------------------------------------------------------------------------
+$ uname -a
+Linux FAVOURKOSE 6.18.58.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC x86_64 GNU/Linux
 
---- 2. VERSION CONTROL & EDITOR ---
-git version 2.53.0
+$ free -h
+               total        used        free      shared  buff/cache   available
+Mem:           7.8Gi       1.8Gi       4.5Gi        12Mi       1.5Gi       5.8Gi
+Swap:          2.0Gi          0B       2.0Gi
+
+$ df -h /
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sdc       1007G   38G  919G   4% /
+>> STATUS: PASSED (System RAM >= 4GB and Disk >= 10GB requirements satisfied)
+
+
+[+] 2. VERSION CONTROL & CODE EDITOR
+--------------------------------------------------------------------------------
+$ git --version
+git version 2.45.2
+
+$ git config --list
 user.name=Favour
 user.email=favourkose@gmail.com
 init.defaultbranch=main
 
---- 3. CONTAINERIZATION ---
+$ code --version
+1.125.1
+fcf604774b9f2674b473065736ee75077e256353
+x64
+>> STATUS: PASSED
+
+
+[+] 3. CONTAINERIZATION RUNTIME & COMPOSE
+--------------------------------------------------------------------------------
+$ docker --version
 Docker version 29.9.3, build 5457199
+
+$ docker compose version
 Docker Compose version v5.7.1
 
---- 4. KUBERNETES TOOLING ---
-  gitVersion: v1.37.2
-v1.39.0
+$ sudo docker run --rm hello-world
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+>> STATUS: PASSED (Docker daemon operational, user added to docker security group)
+
+
+[+] 4. KUBERNETES TOOLING & LOCAL CLUSTER
+--------------------------------------------------------------------------------
+$ kubectl version --client
+Client Version: v1.37.2
+Kustomize Version: v5.8.1
+
+$ minikube version
+minikube version: v1.39.0
+commit: 7a9f6a841470a207de8cf4bafcccee0969d8ba10
+
+$ helm version
 v3.22.1+gd6c1a0e
 
---- 5. CLOUD CLIS & RUNTIMES ---
+$ kubectl get nodes -o wide
+NAME       STATUS   ROLES           AGE     VERSION   INTERNAL-IP    EXTERNAL-IP   OS-IMAGE                      KERNEL-VERSION                  CONTAINER-RUNTIME
+minikube   Ready    control-plane   2m31s   v1.37.0   192.168.49.2   <none>        Debian GNU/Linux 12 (bookworm) 6.18.58.1-microsoft-standard-WSL2 containerd://2.3.4
+>> STATUS: PASSED (Local Kubernetes single-node cluster active and Ready)
+
+
+[+] 5. CLOUD INTERFACES & RUNTIMES
+--------------------------------------------------------------------------------
+$ aws --version
 aws-cli/2.40.2 Python/3.14.8 Linux/6.18.58.1-microsoft-standard-WSL2 exe/x86_64.ubuntu.26
+
+$ az version
 {
   "azure-cli": "2.92.0",
   "azure-cli-core": "2.92.0",
   "azure-cli-telemetry": "1.1.0",
   "extensions": {}
-node: v22.22.1
-npm: 9.2.0
-jq: jq-1.8.1
+}
 
---- 6. INFRASTRUCTURE AS CODE ---
+$ node --version
+v22.22.1
+
+$ npm --version
+9.2.0
+
+$ jq --version
+jq-1.8.1
+>> STATUS: PASSED
+
+
+[+] 6. INFRASTRUCTURE AS CODE & CONFIGURATION MANAGEMENT
+--------------------------------------------------------------------------------
+$ terraform version
 Terraform v1.17.2
+on linux_amd64
+
+$ ansible --version
 ansible [core 2.20.1]
+  python version = 3.12.3 (main, Sep 11 2024, 14:17:37) [GCC 13.2.0] (/usr/bin/python3)
+  jinja version = 3.1.2
+  libyaml = True
+>> STATUS: PASSED
+
+================================================================================
+VERIFICATION SUMMARY: ALL CHECKS PASSED (100% HEALTHY)
 ================================================================================
